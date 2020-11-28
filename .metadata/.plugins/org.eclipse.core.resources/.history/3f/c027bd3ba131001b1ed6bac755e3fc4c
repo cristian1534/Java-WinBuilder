@@ -1,0 +1,202 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextPane;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JRadioButton;
+import javax.swing.JCheckBox;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import java.awt.SystemColor;
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.text.DecimalFormat;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+
+
+
+
+
+public class Parcial extends JFrame  implements ItemListener, ChangeListener, ActionListener {
+
+	private JPanel contentPane;
+	private JTextField details;
+	
+	
+	private ButtonGroup bg, bgx;
+	private JRadioButton asus, gigaByte, msi,mb2, mb4, mb8 ;
+
+	/**
+	 * Launch the application.
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Parcial frame = new Parcial();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Parcial() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 443, 372);
+		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.activeCaption);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JComboBox options = new JComboBox();
+		options.setBounds(226, 50, 70, 20);
+		contentPane.add(options);
+		
+		options.addItem("Intel");
+		options.addItem("Atlon");
+		options.addItem("Turion");
+		options.addItemListener(this);
+		
+		
+		
+		
+		JLabel lblNewLabel = new JLabel("Tipo de");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel.setBounds(103, 52, 70, 14);
+		contentPane.add(lblNewLabel);
+		
+		
+		
+		
+		
+		
+		
+		
+		bg = new ButtonGroup();						
+		
+		asus = new JRadioButton("Asus");
+		asus.setBounds(130,25,60,100);
+		asus.addChangeListener(this);
+		add(asus);
+		bg.add(asus);
+		
+		gigaByte = new JRadioButton("GigaByte");
+		gigaByte.setBounds(200,25,90,100);
+		gigaByte.addChangeListener(this);
+		add(gigaByte);
+		bg.add(gigaByte);
+		
+		msi = new JRadioButton("Msi");
+		msi.setBounds(290,25,80,100);
+		msi.addChangeListener(this);
+		add(msi);
+		bg.add(msi);
+		
+		
+		
+		/**
+		*CheckBox
+		**/
+		
+		
+		JCheckBox monitor = new JCheckBox("Monitor");
+		monitor.setBackground(SystemColor.activeCaption);
+		monitor.setBounds(103, 179, 97, 23);
+		contentPane.add(monitor);
+		
+		JCheckBox hardDisk = new JCheckBox("Disco fIjo 1 TM");
+		hardDisk.setBackground(SystemColor.activeCaption);
+		hardDisk.setBounds(209, 179, 97, 23);
+		contentPane.add(hardDisk);
+		
+		
+		
+		
+		
+		/**
+		*Buttons
+		**/
+		
+		
+		JButton calculator = new JButton("Calcular Importe");
+		calculator.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		calculator.setBounds(63, 227, 109, 23);
+		contentPane.add(calculator);
+		
+		JButton dialogue = new JButton("Ver Dialogo");
+		dialogue.setBounds(63, 276, 109, 23);
+		contentPane.add(dialogue);
+		
+		JButton exit = new JButton("Salir");
+		exit.setBounds(223, 276, 109, 23);
+		contentPane.add(exit);
+		
+		details = new JTextField();
+		details.setBounds(226, 228, 106, 20);
+		contentPane.add(details);
+		details.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel("Placa Madre");
+		lblNewLabel_1.setBounds(26, 100, 71, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Memoria");
+		lblNewLabel_2.setBounds(26, 139, 46, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JTextPane txtpnVentaDePc = new JTextPane();
+		txtpnVentaDePc.setBackground(SystemColor.textHighlight);
+		txtpnVentaDePc.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtpnVentaDePc.setText("                           Venta de PC");
+		txtpnVentaDePc.setBounds(0, 0, 434, 39);
+		contentPane.add(txtpnVentaDePc);
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void stateChanged(ChangeEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void itemStateChanged(ItemEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+}
